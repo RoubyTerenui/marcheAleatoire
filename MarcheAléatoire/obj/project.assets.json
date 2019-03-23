@@ -681,28 +681,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/karimmouaddel/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Terenui\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/karimmouaddel/Projects/MarcheAléatoire/MarcheAléatoire/MarcheAléatoire.csproj",
+      "projectUniqueName": "D:\\TravailEtudiant\\fise3UQAC\\Simulation_de_Systeme\\marcheAleatoire\\MarcheAléatoire\\MarcheAléatoire.csproj",
       "projectName": "MarcheAléatoire",
-      "projectPath": "/Users/karimmouaddel/Projects/MarcheAléatoire/MarcheAléatoire/MarcheAléatoire.csproj",
-      "packagesPath": "/Users/karimmouaddel/.nuget/packages/",
-      "outputPath": "/Users/karimmouaddel/Projects/MarcheAléatoire/MarcheAléatoire/obj",
+      "projectPath": "D:\\TravailEtudiant\\fise3UQAC\\Simulation_de_Systeme\\marcheAleatoire\\MarcheAléatoire\\MarcheAléatoire.csproj",
+      "packagesPath": "C:\\Users\\Terenui\\.nuget\\packages\\",
+      "outputPath": "D:\\TravailEtudiant\\fise3UQAC\\Simulation_de_Systeme\\marcheAleatoire\\MarcheAléatoire\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/karimmouaddel/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Terenui\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -720,9 +722,8 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
-            "version": "2.1.0",
+            "version": "[2.1.0, )",
             "autoReferenced": true
           }
         },
