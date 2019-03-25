@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -39,14 +33,9 @@ namespace WindowsFormsApp1
             walk.walk(generator);
             panel1.Refresh();
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
+        private void Form1_Load(object sender, EventArgs e){}
 
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e){}
 
         private void panel1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
         {
@@ -55,53 +44,53 @@ namespace WindowsFormsApp1
             {
                 //pen0 for repere
                 Pen pen0 = new Pen(Color.FromArgb(0, 0, 0));
-                //pen1 for S
+                //pen1 for U
                 Pen pen1 = new Pen(Color.FromArgb(255, 239, 0));
-                //pen2 for C
+                //pen2 for S
                 Pen pen2 = new Pen(Color.FromArgb(255, 119, 0));
-                //pen3 for U
+                //pen3 for C
                 Pen pen3 = new Pen(Color.FromArgb(0, 137, 255));
 
                 //draw repere
                 e.Graphics.DrawLine(pen0, 0, 350, 400, 350);
                 e.Graphics.DrawLine(pen0, 50, 500, 50, -700);
-
-                //S-marche
-                walk.Type = 'S';
-                for (int i = 0; i < 350; i++)
+           
+                //U-marche
+                walk.Type = 'U';
+                for (int i = 0; i < 1000; i++)
                 {
                     walk.walk(generator);
                 }
                 e.Graphics.DrawLine(pen1,
                                     50,
                                     350,
-                                    (walk.PrevPositions[0].X + walk.ActualPos.X) / 2,
+                                    50 + (walk.PrevPositions[0].X + walk.ActualPos.X) / 2,
                                     (walk.PrevPositions[0].X + walk.ActualPos.X) / 2
                                     );
 
-                //C-marche
-                walk.Type = 'C';
-                for (int i = 0; i < 350; i++)
+                //S-marche
+                walk.Type = 'S';
+                for (int i = 0; i < 1000; i++)
                 {
                     walk.walk(generator);
                 }
                 e.Graphics.DrawLine(pen2,
                                     50,
                                     350,
-                                    (walk.PrevPositions[0].X + walk.ActualPos.X) / 2,
+                                    50 + (walk.PrevPositions[0].X + walk.ActualPos.X) / 2,
                                     (walk.PrevPositions[0].X + walk.ActualPos.X) / 2
                                     );
 
-                //U-marche
-                walk.Type = 'U';
-                for (int i = 0; i < 350; i++)
+                //C-marche
+                walk.Type = 'C';
+                for (int i = 0; i < 1000; i++)
                 {
                     walk.walk(generator);
                 }
                 e.Graphics.DrawLine(pen3,
                                     50,
                                     350,
-                                    (walk.PrevPositions[0].X + walk.ActualPos.X) / 2,
+                                    50 + (walk.PrevPositions[0].X + walk.ActualPos.X) / 2,
                                     (walk.PrevPositions[0].X + walk.ActualPos.X) / 2);
             }
             else
