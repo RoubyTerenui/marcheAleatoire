@@ -57,16 +57,29 @@ namespace WindowsFormsApp1
            
                 //U-marche
                 walk.Type = 'U';
-                for (int i = 0; i < 1000; i++)
+                double[] meanDistancetab = new double[100];
+                double meanDistance = 0;
+                for (int i = 1; i < 60; i++)
                 {
-                    walk.walk(generator);
+                    walk.NbrFoot = i;
+                    for (int j = 0; j < 1000; j++)
+                    {
+                        walk.walk(generator);
+                        meanDistance += walk.PrevPositions[0].distance(walk.ActualPos);
+                    }
+                    meanDistancetab[i] = meanDistance;
                 }
-                e.Graphics.DrawLine(pen1,
-                                    50,
-                                    350,
-                                    50 + (walk.PrevPositions[0].X + walk.ActualPos.X) / 2,
-                                    (walk.PrevPositions[0].X + walk.ActualPos.X) / 2
-                                    );
+                Console.WriteLine(meanDistance);
+                Console.WriteLine(meanDistancetab.Length);
+                for(int i = 1; i < meanDistancetab.Length; i++)
+                {
+                    e.Graphics.DrawLine(pen1,
+                                    50 + Convert.ToInt64(meanDistancetab[i]),
+                                    350 + (i-1)*10,
+                                    50 + Convert.ToInt64(meanDistance),
+                                    350 + i*10);
+                }
+
 
                 //S-marche
                 walk.Type = 'S';
@@ -78,9 +91,8 @@ namespace WindowsFormsApp1
                                     50,
                                     350,
                                     50 + (walk.PrevPositions[0].X + walk.ActualPos.X) / 2,
-                                    (walk.PrevPositions[0].X + walk.ActualPos.X) / 2
-                                    );
-
+                                    (walk.PrevPositions[0].X + walk.ActualPos.X) / 2);
+                                
                 //C-marche
                 walk.Type = 'C';
                 for (int i = 0; i < 1000; i++)
@@ -92,6 +104,7 @@ namespace WindowsFormsApp1
                                     350,
                                     50 + (walk.PrevPositions[0].X + walk.ActualPos.X) / 2,
                                     (walk.PrevPositions[0].X + walk.ActualPos.X) / 2);
+                Console.WriteLine("for C :" + walk.ActualPos.X);
             }
             else
             {

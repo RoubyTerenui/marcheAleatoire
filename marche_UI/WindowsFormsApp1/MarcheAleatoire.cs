@@ -104,7 +104,7 @@ namespace WindowsFormsApp1
                                     value = -1;
                                 }
                             } while (ActualPos.getIndex(dir) + value == PrevPositions[i - 1].getIndex(dir));
-                            PrevPositions[i] = new Position(ActualPos); ;
+                            PrevPositions[i] = new Position(ActualPos);
                             ActualPos.setIndex(dir, ActualPos.getIndex(dir) + value);
                             i++;
                             IEnumerator enumerator = PrevPositions.GetEnumerator();
