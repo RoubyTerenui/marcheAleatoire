@@ -33,6 +33,8 @@
             this.nbrFoot = new System.Windows.Forms.NumericUpDown();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Launch = new System.Windows.Forms.Button();
+            this.Graph = new System.Windows.Forms.Button();
+
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbrFoot)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +56,7 @@
             this.panel2.Controls.Add(this.nbrFoot);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.Launch);
+            this.panel2.Controls.Add(this.Graph);
             this.panel2.Location = new System.Drawing.Point(1, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(799, 57);
@@ -96,6 +99,16 @@
             this.Launch.Text = "Launch";
             this.Launch.UseVisualStyleBackColor = true;
             this.Launch.Click += new System.EventHandler(this.launch);
+            //
+            // Graph
+            //
+            this.Graph.Location = new System.Drawing.Point(15, 12);
+            this.Graph.Name = "Graph";
+            this.Graph.Size = new System.Drawing.Size(101, 34);
+            this.Graph.TabIndex = 0;
+            this.Graph.Text = "Graph";
+            this.Graph.UseVisualStyleBackColor = true;
+            this.Graph.Click += new System.EventHandler(this.graph);
             // 
             // Form1
             // 
@@ -119,6 +132,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button Launch;
+        private System.Windows.Forms.Button Graph;
         private System.Windows.Forms.NumericUpDown nbrFoot;
     }
 }

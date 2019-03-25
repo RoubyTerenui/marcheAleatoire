@@ -6,7 +6,6 @@ namespace WindowsFormsApp1
         private double x0, x_1, x_2, n, k, u;
 
         // Constructor
-
         public RandomGenerator(double x0, double x_1, double x_2, double n, double k, double u)
         {
             if (x0 > 0 && x_1 > 0 && x_2 > 0)
