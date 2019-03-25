@@ -19,3 +19,4 @@ D:\TravailEtudiant\fise3UQAC\Simulation_de_Systeme\marcheAleatoire\MarcheAléato
 D:\TravailEtudiant\fise3UQAC\Simulation_de_Systeme\marcheAleatoire\MarcheAléatoire\obj\Debug\netcoreapp2.1\MarcheAléatoire.AssemblyInfo.cs
 D:\TravailEtudiant\fise3UQAC\Simulation_de_Systeme\marcheAleatoire\MarcheAléatoire\obj\Debug\netcoreapp2.1\MarcheAléatoire.dll
 D:\TravailEtudiant\fise3UQAC\Simulation_de_Systeme\marcheAleatoire\MarcheAléatoire\obj\Debug\netcoreapp2.1\MarcheAléatoire.pdb
+D:\TravailEtudiant\fise3UQAC\Simulation_de_Systeme\marcheAleatoire\MarcheAléatoire\obj\Debug\netcoreapp2.1\MarcheAléatoire.csprojAssemblyReference.cache

@@ -11,7 +11,7 @@ namespace MarcheAléatoire
 
         public TestDes()
         {
-            this.Generator = new RandomGenerator(13, 1073, 43215, 4294967087, 1403580, 810728);
+            this.Generator = new RandomGenerator(105, 107484, 643216, 4294967085, 1403580, 810728);
             this.NbreTest = 0;
             this.TabRes = new int[11];
         }

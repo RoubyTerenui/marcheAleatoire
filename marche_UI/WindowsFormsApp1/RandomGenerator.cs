@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MarcheAléatoire
+namespace WindowsFormsApp1
 {
     public class RandomGenerator
     {
