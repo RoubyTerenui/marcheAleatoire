@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 
 namespace WindowsFormsApp1
 {
@@ -8,6 +9,7 @@ namespace WindowsFormsApp1
         private char type;
         private Position[] prevPositions;
         private Position actualPos;
+        private int positionMax;
 
         // Constructor
         public MarcheAleatoire(int nbrFoot, char type)
@@ -15,6 +17,7 @@ namespace WindowsFormsApp1
             this.NbrFoot = nbrFoot;
             PrevPositions = new Position[nbrFoot];
             actualPos = new Position();
+            positionMax = 0;
             if (type.Equals('C') || type.Equals('S') || type.Equals('U'))
             {
                 this.Type = type;
@@ -30,6 +33,7 @@ namespace WindowsFormsApp1
         public char Type { get => type; set => type = value; }
         internal Position[] PrevPositions { get => prevPositions; set => prevPositions = value; }
         internal Position ActualPos { get => actualPos; set => actualPos = value; }
+        public int PositionMax { get => positionMax; set => positionMax = value; }
 
         // Other Functions
 
@@ -49,6 +53,8 @@ namespace WindowsFormsApp1
                         value = -1;
                     }
                     ActualPos.setIndex(dir,ActualPos.getIndex(dir) + value);
+                    if (Math.Abs(ActualPos.X) > positionMax) positionMax = Math.Abs(ActualPos.X);
+                    if (Math.Abs(ActualPos.Y) < positionMax) positionMax = Math.Abs(ActualPos.Y);
                 }
                 
             }
@@ -71,6 +77,8 @@ namespace WindowsFormsApp1
                             } while (ActualPos.getIndex(dir) + value == PrevPositions[i - 1].getIndex(dir));
                             PrevPositions[i] = new Position(ActualPos); ;
                             ActualPos.setIndex(dir, ActualPos.getIndex(dir) + value);
+                            if (Math.Abs(ActualPos.X) > positionMax) positionMax = Math.Abs(ActualPos.X);
+                            if (Math.Abs(ActualPos.Y) < positionMax) positionMax = Math.Abs(ActualPos.Y);
                         }
                         else
                         {
@@ -82,6 +90,8 @@ namespace WindowsFormsApp1
                                 value = -1;
                             }
                             ActualPos.setIndex(dir, ActualPos.getIndex(dir) + value);
+                            if (Math.Abs(ActualPos.X) > positionMax) positionMax = Math.Abs(ActualPos.X);
+                            if (Math.Abs(ActualPos.Y) < positionMax) positionMax = Math.Abs(ActualPos.Y);
 
                         }                        
                     }
@@ -106,6 +116,8 @@ namespace WindowsFormsApp1
                             } while (ActualPos.getIndex(dir) + value == PrevPositions[i - 1].getIndex(dir));
                             PrevPositions[i] = new Position(ActualPos);
                             ActualPos.setIndex(dir, ActualPos.getIndex(dir) + value);
+                            if (Math.Abs(ActualPos.X) > positionMax) positionMax = Math.Abs(ActualPos.X);
+                            if (Math.Abs(ActualPos.Y) < positionMax) positionMax = Math.Abs(ActualPos.Y);
                             i++;
                             IEnumerator enumerator = PrevPositions.GetEnumerator();
                             selfavoided = true;
@@ -118,6 +130,7 @@ namespace WindowsFormsApp1
                                         selfavoided = false;
                                         PrevPositions = new Position[NbrFoot];
                                         ActualPos = new Position();
+                                        positionMax = 0;
                                         i = 0;
                                     }
                                 }
@@ -134,6 +147,8 @@ namespace WindowsFormsApp1
                                 value = -1;
                             }
                             ActualPos.setIndex(dir, ActualPos.getIndex(dir) + value);
+                            if (Math.Abs(ActualPos.X) > positionMax) positionMax = Math.Abs(ActualPos.X);
+                            if (Math.Abs(ActualPos.Y) < positionMax) positionMax = Math.Abs(ActualPos.Y);
                             i++;
                         }
                     }

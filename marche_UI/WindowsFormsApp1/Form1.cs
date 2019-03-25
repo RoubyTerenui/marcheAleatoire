@@ -111,13 +111,18 @@ namespace WindowsFormsApp1
                 Pen pen = new Pen(Color.FromArgb(255, 0, 0, 0));
                 for (int i = 0; i < walk.NbrFoot - 1; i++)
                 {
+                    Console.WriteLine(walk.PositionMax);
                     e.Graphics.DrawLine(pen, 
-                                        400 + walk.PrevPositions[i].X * ((int)(400 / walk.NbrFoot)), 
-                                        345 + walk.PrevPositions[i].Y * ((int)(400 / walk.NbrFoot)), 
-                                        400 + walk.PrevPositions[i + 1].X * ((int)(400 / walk.NbrFoot)),
-                                        345 + walk.PrevPositions[i + 1].Y * ((int)(400 / walk.NbrFoot)));
+                                        400 + walk.PrevPositions[i].X * ((int)(40 / walk.PositionMax)), 
+                                        345 + walk.PrevPositions[i].Y * ((int)(40 / walk.PositionMax)), 
+                                        400 + walk.PrevPositions[i + 1].X * ((int)(40 / walk.PositionMax)),
+                                        345 + walk.PrevPositions[i + 1].Y * ((int)(40 / walk.PositionMax)));
                 }
-                e.Graphics.DrawLine(pen, 400 + walk.PrevPositions[walk.NbrFoot - 1].X * ((int)(400 / walk.NbrFoot)), 345 + walk.PrevPositions[walk.NbrFoot - 1].Y * ((int)(400 / walk.NbrFoot)), 400 + walk.ActualPos.X * ((int)(400 / walk.NbrFoot)), 345 + walk.ActualPos.Y * ((int)(400 / walk.NbrFoot)));
+                e.Graphics.DrawLine(pen, 
+                                    400 + walk.PrevPositions[walk.NbrFoot - 1].X * ((int)(40 / walk.PositionMax)), 
+                                    345 + walk.PrevPositions[walk.NbrFoot - 1].Y * ((int)(40 / walk.PositionMax)),
+                                    400 + walk.ActualPos.X * ((int)(40 / walk.PositionMax)), 
+                                    345 + walk.ActualPos.Y * ((int)(40 / walk.PositionMax)));
             }
         }
 
