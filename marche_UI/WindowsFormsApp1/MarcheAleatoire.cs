@@ -104,7 +104,16 @@ namespace WindowsFormsApp1
                                     value = -1;
                                 }
                             } while (ActualPos.getIndex(dir) + value == PrevPositions[i - 1].getIndex(dir));
-                            PrevPositions[i] = new Position(ActualPos);
+                            try
+                            {
+                                PrevPositions[i] = new Position(ActualPos);
+                            }
+                            catch(System.IndexOutOfRangeException e)
+                            {
+                                System.Console.Write(i);
+                                throw new System.ArgumentOutOfRangeException("index parameter is out of range.", e);
+
+                            }
                             ActualPos.setIndex(dir, ActualPos.getIndex(dir) + value);
                             i++;
                             IEnumerator enumerator = PrevPositions.GetEnumerator();

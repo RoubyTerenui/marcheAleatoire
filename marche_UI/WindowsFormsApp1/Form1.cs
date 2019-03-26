@@ -53,57 +53,75 @@ namespace WindowsFormsApp1
 
                 //draw repere
                 e.Graphics.DrawLine(pen0, 0, 350, 400, 350);
-                e.Graphics.DrawLine(pen0, 50, 500, 50, -700);
+                e.Graphics.DrawLine(pen0, 60, 500, 60, 0);
            
                 //U-marche
-                walk.Type = 'U';
-                double[] meanDistancetab = new double[100];
+                double[] meanDistancetab = new double[60];
                 double meanDistance = 0;
                 for (int i = 1; i < 60; i++)
                 {
-                    walk.NbrFoot = i;
+                    walk = new MarcheAleatoire(i, 'U');
                     for (int j = 0; j < 1000; j++)
                     {
                         walk.walk(generator);
                         meanDistance += walk.PrevPositions[0].distance(walk.ActualPos);
                     }
-                    meanDistancetab[i] = meanDistance;
+                    meanDistancetab[i] = meanDistance/1000;
                 }
                 Console.WriteLine(meanDistance);
                 Console.WriteLine(meanDistancetab.Length);
                 for(int i = 1; i < meanDistancetab.Length; i++)
                 {
                     e.Graphics.DrawLine(pen1,
-                                    50 + Convert.ToInt64(meanDistancetab[i]),
-                                    350 + (i-1)*10,
-                                    50 + Convert.ToInt64(meanDistance),
-                                    350 + i*10);
+                                   60 + (i - 1) * (400 / 60),
+                                   350 - Convert.ToInt64(meanDistancetab[i - 1]),
+                                   60 + i * (400 / 60),
+                                   350 - Convert.ToInt64(meanDistancetab[i]));
                 }
-
-
+            
                 //S-marche
-                walk.Type = 'S';
-                for (int i = 0; i < 1000; i++)
+                double[] meanDistancetab2= new double[60];
+                double meanDistance2 = 0;
+                for (int i = 1; i < 60; i++)
                 {
-                    walk.walk(generator);
+                    walk = new MarcheAleatoire(i, 'S');
+                    for (int j = 0; j < 1000; j++)
+                    {
+                        walk.walk(generator);
+                        meanDistance2 += walk.PrevPositions[0].distance(walk.ActualPos);
+                    }
+                    meanDistancetab2[i] = meanDistance2/1000;
+                    Console.WriteLine(meanDistance2);
                 }
-                e.Graphics.DrawLine(pen2,
-                                    50,
-                                    350,
-                                    50 + (walk.PrevPositions[0].X + walk.ActualPos.X) / 2,
-                                    (walk.PrevPositions[0].X + walk.ActualPos.X) / 2);
-                                
+                for (int i = 1; i < meanDistancetab2.Length; i++)
+                {
+                    e.Graphics.DrawLine(pen2,
+                                    60 + (i - 1) * (400 / 60),
+                                    350 - Convert.ToInt64(meanDistancetab2[i - 1]) ,
+                                    60 + i * (400 / 60),
+                                    350 - Convert.ToInt64(meanDistancetab2[i]));
+                }
                 //C-marche
-                walk.Type = 'C';
-                for (int i = 0; i < 1000; i++)
+                double[] meanDistancetab3 = new double[60];
+                double meanDistance3 = 0;
+                for (int i = 1; i < 60; i++)
                 {
-                    walk.walk(generator);
+                    walk = new MarcheAleatoire(i, 'S');
+                    for (int j = 0; j < 1000; j++)
+                    {
+                        walk.walk(generator);
+                        meanDistance3 += walk.PrevPositions[0].distance(walk.ActualPos);
+                    }
+                    meanDistancetab3[i] = meanDistance3/1000;
                 }
-                e.Graphics.DrawLine(pen3,
-                                    50,
-                                    350,
-                                    50 + (walk.PrevPositions[0].X + walk.ActualPos.X) / 2,
-                                    (walk.PrevPositions[0].X + walk.ActualPos.X) / 2);
+                for (int i = 1; i < meanDistancetab3.Length; i++)
+                {
+                    e.Graphics.DrawLine(pen3,
+                                    60 + (i - 1) * (400 / 60),
+                                    350 - Convert.ToInt64(meanDistancetab3[i - 1]),
+                                    60 + i * (400 / 60),
+                                    350 - Convert.ToInt64(meanDistancetab3[i]));
+                }
                 Console.WriteLine("for C :" + walk.ActualPos.X);
             }
             else

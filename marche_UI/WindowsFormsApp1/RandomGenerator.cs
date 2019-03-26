@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
         {
             this.congruence();
             double temp =(mod( X0 , (N + 1)) )/ (N + 1);
-            int res = Convert.ToInt32(Math.Round(temp * (max - min) + min));
+            int res = Convert.ToInt32(Math.Floor(temp * (max+1 - min) + min));
             return res;
         }
 
