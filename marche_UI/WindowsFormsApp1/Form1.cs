@@ -52,9 +52,20 @@ namespace WindowsFormsApp1
                 Pen pen3 = new Pen(Color.FromArgb(0, 137, 255));
 
                 //draw repere
-                e.Graphics.DrawLine(pen0, 0, 350, 400, 350);
-                e.Graphics.DrawLine(pen0, 60, 500, 60, 0);
-           
+                e.Graphics.DrawLine(pen0, 0, 500, 600, 500);
+                e.Graphics.DrawLine(pen0, 60, 700, 60, 0);
+                //echelles Y
+                e.Graphics.DrawLine(pen0, 55, 400, 65, 400);
+                e.Graphics.DrawLine(pen0, 55, 300, 65, 300);
+                e.Graphics.DrawLine(pen0, 55, 200, 65, 200);
+                e.Graphics.DrawLine(pen0, 55, 100, 65, 100);
+                //echelle X
+                for(int i=150; i < 700; i+=90)
+                {
+                    e.Graphics.DrawLine(pen0, i, 495, i, 505);
+                }
+
+
                 //U-marche
                 double[] meanDistancetab = new double[60];
                 double meanDistance = 0;
@@ -68,17 +79,15 @@ namespace WindowsFormsApp1
                     }
                     meanDistancetab[i] = meanDistance/1000;
                 }
-                Console.WriteLine(meanDistance);
-                Console.WriteLine(meanDistancetab.Length);
                 for(int i = 1; i < meanDistancetab.Length; i++)
                 {
                     e.Graphics.DrawLine(pen1,
-                                   60 + (i - 1) * (400 / 60),
-                                   350 - Convert.ToInt64(meanDistancetab[i - 1]),
-                                   60 + i * (400 / 60),
-                                   350 - Convert.ToInt64(meanDistancetab[i]));
+                                   60 + (i - 1) * (540 / 60),
+                                   500 - Convert.ToInt64(meanDistancetab[i - 1]),
+                                   60 + i * (540 / 60),
+                                   500 - Convert.ToInt64(meanDistancetab[i]));
                 }
-            
+
                 //S-marche
                 double[] meanDistancetab2= new double[60];
                 double meanDistance2 = 0;
@@ -91,15 +100,14 @@ namespace WindowsFormsApp1
                         meanDistance2 += walk.PrevPositions[0].distance(walk.ActualPos);
                     }
                     meanDistancetab2[i] = meanDistance2/1000;
-                    Console.WriteLine(meanDistance2);
                 }
                 for (int i = 1; i < meanDistancetab2.Length; i++)
                 {
                     e.Graphics.DrawLine(pen2,
-                                    60 + (i - 1) * (400 / 60),
-                                    350 - Convert.ToInt64(meanDistancetab2[i - 1]) ,
-                                    60 + i * (400 / 60),
-                                    350 - Convert.ToInt64(meanDistancetab2[i]));
+                                    60 + (i - 1) * (540 / 60),
+                                    500 - Convert.ToInt64(meanDistancetab2[i - 1]) ,
+                                    60 + i * (540 / 60),
+                                    500 - Convert.ToInt64(meanDistancetab2[i]));
                 }
                 //C-marche
                 double[] meanDistancetab3 = new double[60];
@@ -117,19 +125,17 @@ namespace WindowsFormsApp1
                 for (int i = 1; i < meanDistancetab3.Length; i++)
                 {
                     e.Graphics.DrawLine(pen3,
-                                    60 + (i - 1) * (400 / 60),
-                                    350 - Convert.ToInt64(meanDistancetab3[i - 1]),
-                                    60 + i * (400 / 60),
-                                    350 - Convert.ToInt64(meanDistancetab3[i]));
+                                    60 + (i - 1) * (540 / 60),
+                                    500 - Convert.ToInt64(meanDistancetab3[i - 1]),
+                                    60 + i * (540 / 60),
+                                    500 - Convert.ToInt64(meanDistancetab3[i]));
                 }
-                Console.WriteLine("for C :" + walk.ActualPos.X);
             }
             else
             {
                 Pen pen = new Pen(Color.FromArgb(255, 0, 0, 0));
                 for (int i = 0; i < walk.NbrFoot - 1; i++)
                 {
-                    Console.WriteLine(walk.PositionMax);
                     e.Graphics.DrawLine(pen, 
                                         panel1.Height/2 + walk.PrevPositions[i].X * ((int)(40 / walk.PositionMax)), 
                                         panel1.Width/2 + walk.PrevPositions[i].Y * ((int)(40 / walk.PositionMax)),
