@@ -34,7 +34,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Launch = new System.Windows.Forms.Button();
             this.Graph = new System.Windows.Forms.Button();
-
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbrFoot)).BeginInit();
             this.SuspendLayout();
@@ -99,9 +98,9 @@
             this.Launch.Text = "Launch";
             this.Launch.UseVisualStyleBackColor = true;
             this.Launch.Click += new System.EventHandler(this.launch);
-            //
+            // 
             // Graph
-            //
+            // 
             this.Graph.Location = new System.Drawing.Point(15, 12);
             this.Graph.Name = "Graph";
             this.Graph.Size = new System.Drawing.Size(101, 34);
