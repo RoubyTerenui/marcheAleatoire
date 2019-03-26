@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
         public double distance(Position endPosition)
         {
             double res;
-            res = Math.Sqrt(Math.Pow(X - endPosition.X, 2) + Math.Pow(Y - endPosition.Y, 2));
+            res =Math.Pow(X - endPosition.X, 2) + Math.Pow(Y - endPosition.Y, 2);
             return res;
         }
     }

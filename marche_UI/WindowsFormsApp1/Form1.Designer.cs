@@ -64,6 +64,11 @@
             // nbrFoot
             // 
             this.nbrFoot.Location = new System.Drawing.Point(523, 18);
+            this.nbrFoot.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
             this.nbrFoot.Name = "nbrFoot";
             this.nbrFoot.Size = new System.Drawing.Size(120, 22);
             this.nbrFoot.TabIndex = 3;

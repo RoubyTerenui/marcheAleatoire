@@ -11,7 +11,7 @@ namespace WindowsFormsApp1
         bool graphBool;
         public Form1()
         {
-            generator = new RandomGenerator(13, 1073, 43215, 4294967087, 1403580, 810728);
+            generator = new RandomGenerator(107, 107484, 643217, 4294967085, 1403580, 810728);
             InitializeComponent();
             walk = new MarcheAleatoire((int)nbrFoot.Value, comboBox1.Text[0]);
             walk.walk(generator);
@@ -68,9 +68,10 @@ namespace WindowsFormsApp1
 
                 //U-marche
                 double[] meanDistancetab = new double[60];
-                double meanDistance = 0;
-                /*for (int i = 1; i < 60; i++)
+                double meanDistance ;
+                for (int i = 1; i < 60; i++)
                 {
+                    meanDistance=0;
                     walk = new MarcheAleatoire(i, 'U');
                     for (int j = 0; j < 1000; j++)
                     {
@@ -90,10 +91,11 @@ namespace WindowsFormsApp1
 
                 //S-marche
                 double[] meanDistancetab2= new double[60];
-                double meanDistance2 = 0;
+                double meanDistance2;
                 for (int i = 1; i < 60; i++)
                 {
                     walk = new MarcheAleatoire(i, 'S');
+                    meanDistance2 = 0;
                     for (int j = 0; j < 1000; j++)
                     {
                         walk.walk(generator);
@@ -114,6 +116,7 @@ namespace WindowsFormsApp1
                 double meanDistance3 = 0;
                 for (int i = 1; i < 60; i++)
                 {
+                    meanDistance3 = 0;
                     walk = new MarcheAleatoire(i, 'C');
                     for (int j = 0; j < 1000; j++)
                     {
@@ -141,6 +144,7 @@ namespace WindowsFormsApp1
                                         panel1.Width/2 + walk.PrevPositions[i].Y * ((int)(40 / walk.PositionMax)),
                                         panel1.Height/2 + walk.PrevPositions[i + 1].X * ((int)(40 / walk.PositionMax)),
                                         panel1.Width/2 + walk.PrevPositions[i + 1].Y * ((int)(40 / walk.PositionMax)));
+                    System.Threading.Thread.Sleep(1000/walk.NbrFoot);
                 }
                 e.Graphics.DrawLine(pen,
                                     panel1.Height/2 + walk.PrevPositions[walk.NbrFoot - 1].X * ((int)(40 / walk.PositionMax)),
