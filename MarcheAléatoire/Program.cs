@@ -19,6 +19,8 @@ namespace MarcheAléatoire
             for(int j = 0; j < 100; j++) {
                 int x2 = rando.generate(0, 1);
             }
+
+            System.Console.WriteLine("Résultat test Khi2 {0:F20}", test.testKhi2());
             
         }
     }

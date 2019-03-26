@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
                 //U-marche
                 double[] meanDistancetab = new double[60];
                 double meanDistance = 0;
-                for (int i = 1; i < 60; i++)
+                /*for (int i = 1; i < 60; i++)
                 {
                     walk = new MarcheAleatoire(i, 'U');
                     for (int j = 0; j < 1000; j++)
@@ -77,7 +77,7 @@ namespace WindowsFormsApp1
                                    350 - Convert.ToInt64(meanDistancetab[i - 1]),
                                    60 + i * (400 / 60),
                                    350 - Convert.ToInt64(meanDistancetab[i]));
-                }
+                }*/
             
                 //S-marche
                 double[] meanDistancetab2= new double[60];
@@ -106,7 +106,7 @@ namespace WindowsFormsApp1
                 double meanDistance3 = 0;
                 for (int i = 1; i < 60; i++)
                 {
-                    walk = new MarcheAleatoire(i, 'S');
+                    walk = new MarcheAleatoire(i, 'C');
                     for (int j = 0; j < 1000; j++)
                     {
                         walk.walk(generator);
