@@ -131,16 +131,16 @@ namespace WindowsFormsApp1
                 {
                     Console.WriteLine(walk.PositionMax);
                     e.Graphics.DrawLine(pen, 
-                                        400 + walk.PrevPositions[i].X * ((int)(40 / walk.PositionMax)), 
-                                        345 + walk.PrevPositions[i].Y * ((int)(40 / walk.PositionMax)), 
-                                        400 + walk.PrevPositions[i + 1].X * ((int)(40 / walk.PositionMax)),
-                                        345 + walk.PrevPositions[i + 1].Y * ((int)(40 / walk.PositionMax)));
+                                        panel1.Height/2 + walk.PrevPositions[i].X * ((int)(40 / walk.PositionMax)), 
+                                        panel1.Width/2 + walk.PrevPositions[i].Y * ((int)(40 / walk.PositionMax)),
+                                        panel1.Height/2 + walk.PrevPositions[i + 1].X * ((int)(40 / walk.PositionMax)),
+                                        panel1.Width/2 + walk.PrevPositions[i + 1].Y * ((int)(40 / walk.PositionMax)));
                 }
-                e.Graphics.DrawLine(pen, 
-                                    400 + walk.PrevPositions[walk.NbrFoot - 1].X * ((int)(40 / walk.PositionMax)), 
-                                    345 + walk.PrevPositions[walk.NbrFoot - 1].Y * ((int)(40 / walk.PositionMax)),
-                                    400 + walk.ActualPos.X * ((int)(40 / walk.PositionMax)), 
-                                    345 + walk.ActualPos.Y * ((int)(40 / walk.PositionMax)));
+                e.Graphics.DrawLine(pen,
+                                    panel1.Height/2 + walk.PrevPositions[walk.NbrFoot - 1].X * ((int)(40 / walk.PositionMax)),
+                                    panel1.Width/2 + walk.PrevPositions[walk.NbrFoot - 1].Y * ((int)(40 / walk.PositionMax)),
+                                    panel1.Height/2 + walk.ActualPos.X * ((int)(40 / walk.PositionMax)),
+                                    panel1.Width/2 + walk.ActualPos.Y * ((int)(40 / walk.PositionMax)));
             }
         }
 

@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
             this.NbrFoot = nbrFoot;
             PrevPositions = new Position[nbrFoot];
             actualPos = new Position();
-            positionMax = 0;
+            positionMax = 1;
             if (type.Equals('C') || type.Equals('S') || type.Equals('U'))
             {
                 this.Type = type;
@@ -53,8 +53,8 @@ namespace WindowsFormsApp1
                         value = -1;
                     }
                     ActualPos.setIndex(dir,ActualPos.getIndex(dir) + value);
-                    if (Math.Abs(ActualPos.X) > positionMax) positionMax = Math.Abs(ActualPos.X);
-                    if (Math.Abs(ActualPos.Y) < positionMax) positionMax = Math.Abs(ActualPos.Y);
+                    if (Math.Abs(ActualPos.X) > positionMax && ActualPos.X != 0) positionMax = Math.Abs(ActualPos.X);
+                    if (Math.Abs(ActualPos.Y) < positionMax && ActualPos.Y != 0) positionMax = Math.Abs(ActualPos.Y);
                 }
                 
             }
@@ -77,8 +77,8 @@ namespace WindowsFormsApp1
                             } while (ActualPos.getIndex(dir) + value == PrevPositions[i - 1].getIndex(dir));
                             PrevPositions[i] = new Position(ActualPos); ;
                             ActualPos.setIndex(dir, ActualPos.getIndex(dir) + value);
-                            if (Math.Abs(ActualPos.X) > positionMax) positionMax = Math.Abs(ActualPos.X);
-                            if (Math.Abs(ActualPos.Y) < positionMax) positionMax = Math.Abs(ActualPos.Y);
+                            if (Math.Abs(ActualPos.X) > positionMax && ActualPos.X != 0) positionMax = Math.Abs(ActualPos.X);
+                            if (Math.Abs(ActualPos.Y) < positionMax && ActualPos.Y != 0) positionMax = Math.Abs(ActualPos.Y);
                         }
                         else
                         {
@@ -90,8 +90,8 @@ namespace WindowsFormsApp1
                                 value = -1;
                             }
                             ActualPos.setIndex(dir, ActualPos.getIndex(dir) + value);
-                            if (Math.Abs(ActualPos.X) > positionMax) positionMax = Math.Abs(ActualPos.X);
-                            if (Math.Abs(ActualPos.Y) < positionMax) positionMax = Math.Abs(ActualPos.Y);
+                            if (Math.Abs(ActualPos.X) > positionMax && ActualPos.X != 0) positionMax = Math.Abs(ActualPos.X);
+                            if (Math.Abs(ActualPos.Y) < positionMax && ActualPos.Y != 0) positionMax = Math.Abs(ActualPos.Y);
 
                         }                        
                     }
@@ -139,7 +139,7 @@ namespace WindowsFormsApp1
                                         selfavoided = false;
                                         PrevPositions = new Position[NbrFoot];
                                         ActualPos = new Position();
-                                        positionMax = 0;
+                                        positionMax = 1;
                                         i = 0;
                                     }
                                 }
@@ -156,8 +156,8 @@ namespace WindowsFormsApp1
                                 value = -1;
                             }
                             ActualPos.setIndex(dir, ActualPos.getIndex(dir) + value);
-                            if (Math.Abs(ActualPos.X) > positionMax) positionMax = Math.Abs(ActualPos.X);
-                            if (Math.Abs(ActualPos.Y) < positionMax) positionMax = Math.Abs(ActualPos.Y);
+                            if (Math.Abs(ActualPos.X) > positionMax && ActualPos.X != 0) positionMax = Math.Abs(ActualPos.X);
+                            if (Math.Abs(ActualPos.Y) < positionMax && ActualPos.Y != 0) positionMax = Math.Abs(ActualPos.Y);
                             i++;
                         }
                     }
